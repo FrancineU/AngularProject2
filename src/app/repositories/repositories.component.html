@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row ">
+    <div class="col-md-9 text-center">
+      <app-form (getName)='searchRepos($event)'></app-form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-11">
+      <div >
+        <div class="table">
+          <table class="table">
+            <tbody>
+              <tr *ngFor=" let repository of gitRepoRequest.searchRepo" >
+                <td>
+                  <p>Repository Owner:
+                  <a href="{{repository.owner.html_url}}">{{repository.owner.login}}</a>
+                  </p>
+                  <p>Date Created : {{repository.created_at|date}}</p>
+                  <p>Description : {{repository.description}}</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        <hr>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
